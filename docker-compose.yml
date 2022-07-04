@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  php:
+    container_name: ddd_php-fpm
+    build:
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
+    working_dir: /app
+    ports:
+      - "9090:9001"
+    volumes:
+      - .:/app

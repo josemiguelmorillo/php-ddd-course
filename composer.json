@@ -1,0 +1,23 @@
+{
+  "name": "ddd-course/app",
+  "type": "project",
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "DddCourse\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DddCourse\\Tests\\": "tests/src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jose Miguel"
+    }
+  ],
+  "require": {}
+}
