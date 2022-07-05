@@ -3,6 +3,7 @@
 namespace DddCourse\application;
 
 use DddCourse\domain\Cart;
+use DddCourse\domain\Item;
 use DddCourse\domain\Product;
 
 class Application
@@ -12,19 +13,24 @@ class Application
     {
         $cart = new Cart();
         $product = new Product('Apple Pencil');
-        $cart->add($product);
+        $item = new Item($product, 2);
+        $cart->add($item);
+        $product = new Product('Sony Wireless Headphone');
+        $item = new Item($product, 1);
+        $cart->add($item);
 
         echo "Cart = $cart\n";
-        $products = $cart->getProducts();
-        $serializeProducts = json_encode($products);
+        $items = $cart->getItems();
+        $serializeItems = json_encode($items);
 
         echo "--------------\n";
-        echo "products = $serializeProducts\n";
+        echo "items = $serializeItems\n";
         echo "--------------\n";
     }
 }
 
 require('src/domain/Cart.php');
+require('src/domain/Item.php');
 require('src/domain/Product.php');
 
 Application::main();

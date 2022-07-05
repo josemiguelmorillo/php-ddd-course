@@ -4,30 +4,28 @@ namespace DddCourse\domain;
 
 class Cart
 {
-    private array $products;
+    private array $items;
 
     public function __construct()
     {
-        $this->products = [];
+        $this->items = [];
     }
 
-    public function add(Product $product): void
+    public function add(Item $item): void
     {
-        $this->products[] = $product;
+        $this->items[] = $item;
     }
 
-    public function getProducts(): array
+    public function getItems(): array
     {
-        return $this->products;
+        return $this->items;
     }
 
     public function __toString(): string
     {
-        $serializeProduct = json_encode($this->products);
+        $serializeItem = json_encode($this->items);
         return "Cart{\n" .
-            "products=$serializeProduct\n" .
+            "items=$serializeItem\n" .
             "}";
     }
-
-
 }

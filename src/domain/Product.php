@@ -6,6 +6,7 @@ namespace DddCourse\domain;
 class Product
 {
     private string $name;
+    private int $quantity;
 
     public function __construct(string $name)
     {
@@ -20,7 +21,18 @@ class Product
     public function __toString(): string
     {
         return "Product{\n" .
-            "name='$this->name'\n" .
+            "name='$this->name',\n" .
+            "quantity=$this->quantity\n" .
             "}";
+    }
+
+    public function setQuantity(int $quantity): void
+    {
+        $this->quantity = $quantity;
+    }
+
+    public function getQuantity(): int
+    {
+        return $this->quantity;
     }
 }
